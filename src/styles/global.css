@@ -1,8 +1,44 @@
+:root {
+  --dark: hsl(0, 0%, 20%);
+  --light: hsl(0, 0%, 99%);
+  --light-gradient: linear-gradient(
+    90deg,
+    hsl(216deg 24% 96%) 0%,
+    hsl(216deg 24% 97%) 2%,
+    hsl(216deg 24% 98%) 5%,
+    hsl(216deg 24% 99%) 8%,
+    hsl(300deg 100% 100%) 13%,
+    hsl(300deg 100% 100%) 19%,
+    hsl(300deg 100% 100%) 30%,
+    hsl(0deg 0% 100%) 53%,
+    hsl(300deg 100% 100%) 76%,
+    hsl(300deg 100% 100%) 85%,
+    hsl(300deg 100% 100%) 91%,
+    hsl(216deg 24% 99%) 94%,
+    hsl(216deg 24% 98%) 97%,
+    hsl(216deg 24% 97%) 99%,
+    hsl(216deg 24% 96%) 100%
+  );
+  --dark-gradient: linear-gradient(
+    15deg,
+    hsl(221deg 100% 9%) 8%,
+    hsl(221deg 79% 10%) 36%,
+    hsl(224deg 63% 12%) 49%,
+    hsl(227deg 50% 14%) 59%,
+    hsl(231deg 41% 16%) 68%,
+    hsl(235deg 35% 17%) 75%,
+    hsl(238deg 30% 19%) 81%,
+    hsl(242deg 27% 20%) 87%,
+    hsl(246deg 25% 22%) 93%,
+    hsl(249deg 23% 23%) 99%
+  );
+}
+
 html {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f6f6f6;
-  color: #444;
+  background-image: var(--light-gradient);
+  color: var(--dark);
 }
 
 body {
@@ -30,20 +66,8 @@ code {
 
 @media (prefers-color-scheme: dark) {
   html {
-    background-image: linear-gradient(
-      15deg,
-      hsl(221deg 100% 9%) 8%,
-      hsl(221deg 79% 10%) 36%,
-      hsl(224deg 63% 12%) 49%,
-      hsl(227deg 50% 14%) 59%,
-      hsl(231deg 41% 16%) 68%,
-      hsl(235deg 35% 17%) 75%,
-      hsl(238deg 30% 19%) 81%,
-      hsl(242deg 27% 20%) 87%,
-      hsl(246deg 25% 22%) 93%,
-      hsl(249deg 23% 23%) 99%
-    );
+    background-image: var(--dark-gradient);
     background-size: cover;
-    color: #f6f6f6;
+    color: var(--light);
   }
 }
