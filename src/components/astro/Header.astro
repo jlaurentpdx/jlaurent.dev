@@ -1,18 +1,21 @@
 ---
-// @ts-ignore
-import { DarkMode } from 'accessible-astro-components'
+import Navigation from './Navigation.astro'
 const logo = 'logo_white_bg.svg'
 ---
 
 <header>
-  <a href="/">
-    <img src={logo} alt="Go to homepage" />
-  </a>
+  <nav>
+    <a href="/">
+      <img src={logo} alt="Go to homepage" />
+    </a>
+    <Navigation />
+  </nav>
 </header>
 
 <style>
-  header {
+  nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
   img {
