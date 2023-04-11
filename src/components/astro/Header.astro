@@ -1,0 +1,21 @@
+---
+// @ts-ignore
+import { DarkMode } from 'accessible-astro-components'
+const logo = 'logo_white_bg.svg'
+---
+
+<header>
+  <a href="/">
+    <img src={logo} alt="Go to homepage" />
+  </a>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  img {
+    width: 64px;
+  }
+</style>

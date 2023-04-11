@@ -1,0 +1,28 @@
+---
+import Header from '../components/astro/Header.astro'
+import '../styles/global.css'
+
+const {
+  title = 'Jordan Laurent',
+  subtitle = 'Home',
+  description = 'Software Developer in Portland, Oregon.',
+  author = 'Jordan Laurent',
+} = Astro.props
+---
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | {subtitle}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>
