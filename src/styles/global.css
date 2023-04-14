@@ -46,7 +46,7 @@ body {
   width: 100%;
   max-width: 80ch;
   padding: 1rem;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 * {
@@ -64,10 +64,33 @@ code {
     monospace;
 }
 
+a {
+  /* font-weight: bold; */
+  text-decoration: underline dotted #bbb;
+  text-underline-offset: 0.25rem;
+  color: var(--dark);
+}
+
+a:hover,
+a:focus {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background-image: var(--dark-gradient);
     background-size: cover;
     color: var(--light);
+  }
+
+  a {
+    color: var(--light);
+  }
+
+  a:hover,
+  a:focus {
+    background-color: var(--light);
+    color: var(--dark);
   }
 }
