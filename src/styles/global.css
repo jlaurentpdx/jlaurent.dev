@@ -34,6 +34,7 @@
   );
 }
 
+/* ================ LIGHT MODE SETTINGS ================ */
 html {
   height: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -59,13 +60,7 @@ h1 {
   margin: 0;
 }
 
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-    monospace;
-}
-
 a {
-  /* font-weight: bold; */
   text-decoration: underline dotted #bbb;
   text-underline-offset: 0.25rem;
   color: var(--dark);
@@ -73,10 +68,17 @@ a {
 
 a:hover,
 a:focus {
-  background-color: var(--dark);
-  color: var(--light);
+  outline: solid var(--dark) 2px;
+  outline-offset: 1px;
+  border-radius: 2px;
 }
 
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace;
+}
+
+/* ================ DARK MODE SETTINGS ================ */
 @media (prefers-color-scheme: dark) {
   html {
     background-image: var(--dark-gradient);
