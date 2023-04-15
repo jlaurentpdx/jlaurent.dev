@@ -83,6 +83,8 @@ code {
   html {
     background-image: var(--dark-gradient);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: hsl(221deg 100% 9%);
     color: var(--light);
   }
 
