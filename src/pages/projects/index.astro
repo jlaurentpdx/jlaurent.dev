@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Projects from '../../components/react/Projects'
 ---
 
 <DefaultLayout>
@@ -26,6 +27,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
       </p>
     </article>
   </section>
+  <Projects client:visible />
 </DefaultLayout>
 
 <style>
