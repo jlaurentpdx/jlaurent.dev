@@ -33,3 +33,14 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
     font-weight: 600;
   }
 </style>
+
+<script>
+  import { getProjects } from '../../scripts/services/supabase.js'
+
+  try {
+    const projects = await getProjects()
+    console.log(projects)
+  } catch (error) {
+    console.log(error)
+  }
+</script>
