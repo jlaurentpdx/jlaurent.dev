@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^2.1.0",
     "@supabase/supabase-js": "^2.20.0",
-    "astro": "^2.2.0"
+    "astro": "^2.2.0",
+    "preact": "^10.13.2"
   },
   "devDependencies": {
     "cypress": "^12.9.0"
