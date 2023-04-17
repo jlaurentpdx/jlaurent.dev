@@ -13,3 +13,8 @@ export async function getProjects() {
   const projects = await supabase.from('projects').select('*')
   return parseData(projects)
 }
+
+export async function getWorks() {
+  const works = await supabase.from('work').select('*')
+  return parseData(works)
+}
