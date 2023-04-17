@@ -31,4 +31,12 @@
     transition: all ease-out 200ms;
     outline: none;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-links a:hover,
+    a:focus {
+      background-color: var(--light);
+      color: var(--dark);
+    }
+  }
 </style>
