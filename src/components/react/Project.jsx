@@ -1,5 +1,5 @@
-export default function Project({ project }) {
-  const { title, description, label, deploy_url, image_url, repo_url } = project
+export default function Project() {
+  const { title, description, label, deploy_url, image_url, repo_url } = this.props
   return (
     <li id={label}>
       <h2>{title}</h2>

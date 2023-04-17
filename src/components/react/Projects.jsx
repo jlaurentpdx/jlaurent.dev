@@ -13,16 +13,14 @@ export default function Projects() {
       } catch (error) {
         throw error
       }
-      console.log(projects)
     }
     fetchData()
-    console.log(projects)
   }, [])
 
   return (
     <ul>
       {projects.map((project) => (
-        <Project project={project} />
+        <Project {...project} />
       ))}
     </ul>
   )
