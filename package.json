@@ -13,6 +13,7 @@
     "@astrojs/preact": "^2.1.0",
     "@supabase/supabase-js": "^2.20.0",
     "astro": "^2.2.0",
+    "astro-icon": "^0.8.0",
     "preact": "^10.13.2"
   },
   "devDependencies": {
