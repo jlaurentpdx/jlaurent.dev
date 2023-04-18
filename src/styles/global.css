@@ -55,9 +55,19 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 800;
   margin: 0;
+  line-height: normal;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p,
+article {
+  font-size: 1.3rem;
 }
 
 a {
@@ -76,6 +86,14 @@ a:focus {
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
     monospace;
+}
+
+hr {
+  margin: 4rem 0;
+}
+
+address {
+  display: inline;
 }
 
 /* ================ DARK MODE SETTINGS ================ */
