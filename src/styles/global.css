@@ -94,7 +94,6 @@ code {
 
   a:hover,
   a:focus {
-    background-color: var(--light);
-    color: var(--dark);
+    outline: solid var(--light) 2px;
   }
 }
