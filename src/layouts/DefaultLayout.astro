@@ -24,7 +24,15 @@ const {
   <body>
     <Header />
     <main>
-      <slot />
+      <slot>
+        <p>
+          If you're seeing this, something went wrong - and <address style="display: inline">
+            <a href="mailto:jlaurent.pdx@gmail.com" target="_blank" rel="noopener" aria-label="Jordan via email"
+              >jlaurent.pdx@gmail.com</a
+            >
+          </address> would love to hear from you.
+        </p>
+      </slot>
     </main>
   </body>
 </html>
