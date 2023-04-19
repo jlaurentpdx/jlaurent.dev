@@ -1,1 +1,40 @@
+---
+import Link from './Link.astro'
+import { Icon } from 'astro-icon'
+import { links } from '../../data/links'
 
+const { linkedIn, github, email } = links
+---
+
+<footer>
+  <Link {...github}>
+    <Icon name="ion:logo-github" />
+  </Link>
+
+  <Link {...linkedIn}>
+    <Icon name="ion:logo-linkedin" />
+  </Link>
+
+  <Link {...email}>
+    <Icon name="ion:mail" />
+  </Link>
+</footer>
+
+<style>
+  [astro-icon] {
+    width: 2rem;
+    text-decoration: none;
+  }
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100%;
+    font-size: 0;
+  }
+  footer a {
+    display: none;
+    text-decoration: none;
+    text-underline-offset: 0;
+  }
+</style>
