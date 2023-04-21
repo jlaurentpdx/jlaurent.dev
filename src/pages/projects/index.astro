@@ -1,8 +1,8 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-// import Projects from '../../components/react/Projects'
 import Project from '../../components/astro/Project.astro'
 import { projects } from '../../data/projects'
+import { techStack } from '../../data/techStack'
 ---
 
 <DefaultLayout>
@@ -10,16 +10,11 @@ import { projects } from '../../data/projects'
     <h1>Projects</h1>
     <article>
       <p>
-        Built with languages, libraries, and frameworks including
-        <span class="tech-stack">React</span>,
-        <span class="tech-stack">ES6</span>,
-        <span class="tech-stack">Express</span>,
-        <span class="tech-stack">Node</span>,
-        <span class="tech-stack">PostgreSQL</span>,
-        <span class="tech-stack">Supabase</span>,
-        <span class="tech-stack">Tone.js</span>, and
-        <span class="tech-stack">Mapbox</span>, the applications on display here highlight just a few of the open-source
-        works I've been a part of developing, deploying, and contributing to.
+        Built with languages, libraries, and frameworks including {
+          techStack.map((item) => <span class="tech-stack">{item}, </span>)
+        }
+        the applications on display here highlight just a few of the open-source works I've been a part of developing, deploying,
+        and contributing to.
       </p>
       <p>
         More info on each app can be found by tapping on the slides below, or you can check them out for yourself by
