@@ -1,6 +1,8 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import Projects from '../../components/react/Projects'
+// import Projects from '../../components/react/Projects'
+import Project from '../../components/astro/Project.astro'
+import { projects } from '../../data/projects'
 ---
 
 <DefaultLayout>
@@ -27,7 +29,7 @@ import Projects from '../../components/react/Projects'
       </p>
     </article>
   </section>
-  <Projects client:visible />
+  {projects.map((project) => <Project {...project} />)}
 </DefaultLayout>
 
 <style>
