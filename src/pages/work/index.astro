@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import Works from '../../components/react/Works'
+import Work from '../../components/astro/Work.astro'
+import { works } from '../../data/works'
 ---
 
 <DefaultLayout>
@@ -16,5 +17,5 @@ import Works from '../../components/react/Works'
       </p>
     </article>
   </section>
-  <Works client:visible />
+  {works.map((work) => <Work {...work} />)}
 </DefaultLayout>
