@@ -1,5 +1,5 @@
 :root {
-  --dark: hsl(0, 0%, 20%);
+  --dark: hsl(221 100% 9%);
   --light: hsl(0, 0%, 99%);
   --light-gradient: linear-gradient(
     90deg,
