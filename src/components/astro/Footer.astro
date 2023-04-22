@@ -1,9 +1,10 @@
 ---
 import Link from './Link.astro'
+import Email from './Email.astro'
 import { Icon } from 'astro-icon'
 import { links } from '../../data/links'
 
-const { linkedIn, github, email } = links
+const { linkedIn, github } = links
 ---
 
 <footer>
@@ -15,9 +16,9 @@ const { linkedIn, github, email } = links
     <Icon name="ion:logo-linkedin" />
   </Link>
 
-  <Link {...email}>
+  <Email>
     <Icon name="ion:mail" />
-  </Link>
+  </Email>
 </footer>
 
 <style>

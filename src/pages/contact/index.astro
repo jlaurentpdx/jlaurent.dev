@@ -1,9 +1,10 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import Link from '../../components/astro/Link.astro'
+import Email from '../../components/astro/Email.astro'
 import { links } from '../../data/links.js'
 
-const { linkedIn, github, email } = links
+const { linkedIn, github } = links
 ---
 
 <DefaultLayout>
@@ -15,9 +16,7 @@ const { linkedIn, github, email } = links
       You can reach me on
       <Link {...linkedIn} />, check out my open-source projects and contributions on
       <Link {...github} />, or email me any time at
-      <address>
-        <Link {...email} />
-      </address>.
+      <Email />.
     </article>
   </section>
 </DefaultLayout>

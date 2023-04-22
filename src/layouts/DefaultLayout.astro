@@ -1,6 +1,7 @@
 ---
 import Header from '../components/astro/Header.astro'
 import Footer from '../components/astro/Footer.astro'
+import Email from '../components/astro/Email.astro'
 import '../styles/global.css'
 import '@fontsource/albert-sans'
 import '@fontsource/albert-sans/variable.css'
@@ -29,11 +30,7 @@ const {
     <main>
       <slot>
         <p>
-          If you're seeing this, something went wrong - and <address style="display: inline">
-            <a href="mailto:jlaurent.pdx@gmail.com" target="_blank" rel="noopener" aria-label="Jordan via email"
-              >jlaurent.pdx@gmail.com</a
-            >
-          </address> would love to hear from you.
+          If you're seeing this, something went wrong - and <Email /> would love to hear from you.
         </p>
       </slot>
     </main>
