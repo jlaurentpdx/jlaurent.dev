@@ -8,34 +8,53 @@ const { linkedIn, github } = links
 ---
 
 <footer>
-  <Link {...github}>
-    <Icon name="ion:logo-github" />
-  </Link>
+  <p>Built and designed by Jordan Laurent</p>
+  <div class="contacts-container">
+    <Link {...github}>
+      <Icon name="ion:logo-github" />
+    </Link>
 
-  <Link {...linkedIn}>
-    <Icon name="ion:logo-linkedin" />
-  </Link>
+    <Link {...linkedIn}>
+      <Icon name="ion:logo-linkedin" />
+    </Link>
 
-  <Email>
-    <Icon name="ion:mail" />
-  </Email>
+    <Email>
+      <Icon name="ion:mail" />
+    </Email>
+  </div>
 </footer>
 
 <style>
   [astro-icon] {
+    color: #444;
     width: 2rem;
     text-decoration: none;
   }
   footer {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #444;
+  }
+  .contacts-container {
+    display: flex;
     justify-content: flex-end;
     gap: 20px;
-    width: 100%;
+    width: 50%;
     font-size: 0;
   }
   footer a {
     display: none;
     text-decoration: none;
     text-underline-offset: 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    [astro-icon] {
+      color: #bbb;
+    }
+    footer {
+      color: #bbb;
+    }
   }
 </style>
