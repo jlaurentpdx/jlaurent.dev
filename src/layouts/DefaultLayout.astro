@@ -5,9 +5,12 @@ import Email from '../components/astro/Email.astro'
 import '../styles/global.css'
 import '@fontsource/albert-sans'
 import '@fontsource/albert-sans/variable.css'
+import '@fontsource/rokkitt'
+import '@fontsource/rokkitt/variable.css'
 
 const {
   title = 'Jordan Laurent',
+  includeHeading = false,
   subtitle = 'Home',
   description = 'Software Developer in Portland, Oregon.',
   author = 'Jordan Laurent',
@@ -28,6 +31,7 @@ const {
   <body>
     <Header />
     <main>
+      {includeHeading ? <h1>{title}</h1> : null}
       <slot>
         <p>
           If you're seeing this, something went wrong - and <Email /> would love to hear from you.
@@ -41,6 +45,12 @@ const {
 <style>
   body {
     font-family: 'Albert Sans', sans-serif;
-    font-weight: 100;
+    font-weight: 400;
+  }
+  h1 {
+    font-family: 'Rokkitt', serif;
+    font-weight: 400;
+    font-size: 6rem;
+    padding: 1rem 0;
   }
 </style>

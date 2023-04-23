@@ -25,17 +25,17 @@
   }
 
   .nav-links a:hover,
-  a:focus {
+  .nav-links a:focus {
     background-color: var(--dark);
     color: var(--light);
     border-radius: 5px;
-    transition: all ease-out 200ms;
+    transition: background ease-out 200ms;
     outline: none;
   }
 
   @media (prefers-color-scheme: dark) {
     .nav-links a:hover,
-    a:focus {
+    .nav-links a:focus {
       background-color: var(--light);
       color: var(--dark);
     }
