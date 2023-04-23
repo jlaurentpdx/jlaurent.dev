@@ -1,18 +1,22 @@
 ---
 import Navigation from './Navigation.astro'
-const logo = 'icons/logo_white_bg.svg'
+import { Icon } from 'astro-icon'
 ---
 
 <header>
   <nav>
     <a href="/">
-      <img src={logo} alt="Go to homepage" />
+      <Icon name="logo" />
     </a>
     <Navigation />
   </nav>
 </header>
 
 <style>
+  [astro-icon] {
+    width: 96px;
+    fill: var(--dark);
+  }
   nav {
     display: flex;
     align-items: center;
@@ -20,5 +24,10 @@ const logo = 'icons/logo_white_bg.svg'
   }
   img {
     width: 96px;
+  }
+  @media (prefers-color-scheme: dark) {
+    [astro-icon] {
+      fill: var(--light);
+    }
   }
 </style>
