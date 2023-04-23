@@ -26,17 +26,11 @@ const { linkedIn, github } = links
 
 <style>
   [astro-icon] {
-    color: #444;
+    color: var(--dark);
     width: 2rem;
     text-decoration: none;
   }
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    color: #444;
-  }
+
   .contacts-container {
     display: flex;
     justify-content: flex-end;
@@ -44,17 +38,24 @@ const { linkedIn, github } = links
     width: 50%;
     font-size: 0;
   }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--mid);
+  }
+
   footer a {
     display: none;
     text-decoration: none;
     text-underline-offset: 0;
   }
+
   @media (prefers-color-scheme: dark) {
     [astro-icon] {
-      color: #bbb;
-    }
-    footer {
-      color: #bbb;
+      color: var(--light);
     }
   }
 </style>
