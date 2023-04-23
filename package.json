@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/preact": "^2.1.0",
     "@fontsource/albert-sans": "^4.5.2",
+    "@fontsource/rokkitt": "^4.5.12",
     "@supabase/supabase-js": "^2.20.0",
     "astro": "^2.2.0",
     "astro-icon": "^0.8.0",

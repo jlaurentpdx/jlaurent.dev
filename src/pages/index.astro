@@ -1,12 +1,54 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import '@fontsource/rokkitt'
+import '@fontsource/rokkitt/variable.css'
 ---
 
 <DefaultLayout>
-  <h1>Howdy.<br /> I'm Jordan</h1>
+  <h1>Howdy.<br /> I'm <span class="heading-name">Jordan</span></h1>
   <p>
-    — a full-stack <strong>software developer</strong>, <strong>multimedia artist</strong>, and <strong>educator</strong
+    — a full-stack <span class="role">software developer</span>, <span class="role">multimedia artist</span>, and <span
+      class="role">educator</span
     > in Portland, Oregon making people-first, user-friendly tools and technology with an emphasis on design, inclusivity,
     and accessibility.
   </p>
 </DefaultLayout>
+<style>
+  h1 {
+    font-family: 'Rokkitt', serif;
+    font-weight: 400;
+    font-size: 8rem;
+    padding: 1rem 0;
+  }
+  .heading-name {
+    background: linear-gradient(330deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
+    background-size: 500% 500%;
+    animation: gradient 30s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+
+  .role {
+    background: linear-gradient(210deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
+    background-size: 500% 500%;
+    animation: gradient 30s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
