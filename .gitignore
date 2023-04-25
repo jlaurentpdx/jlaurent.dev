@@ -21,3 +21,6 @@ pnpm-debug.log*
 .DS_Store
 
 .README.md
+
+# files that may or may not return from the abyss
+.archive
