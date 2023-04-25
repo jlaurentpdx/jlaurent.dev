@@ -1,20 +1,20 @@
 ---
-import Link from './Link.astro'
+import Link from './LinkNewTab.astro'
 import Email from './Email.astro'
 import { Icon } from 'astro-icon'
-import { links } from '../../data/links'
+import { contactLinks } from '../../data/contactLinks'
 
-const { linkedIn, github } = links
+const { linkedIn, github } = contactLinks
 ---
 
 <footer>
   <p>Built and designed by Jordan Laurent</p>
   <div class="contacts-container">
-    <Link {...github}>
+    <Link link={github.link}>
       <Icon name="ion:logo-github" />
     </Link>
 
-    <Link {...linkedIn}>
+    <Link link={linkedIn.link}>
       <Icon name="ion:logo-linkedin" />
     </Link>
 
@@ -49,7 +49,6 @@ const { linkedIn, github } = links
   }
 
   footer a {
-    display: none;
     text-decoration: none;
     text-underline-offset: 0;
   }
