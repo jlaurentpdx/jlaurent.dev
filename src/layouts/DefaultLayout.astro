@@ -31,7 +31,7 @@ const {
   <body>
     <Header />
     <main>
-      {includeHeading ? <h1>{title}</h1> : null}
+      {includeHeading ? <h1>{subtitle}</h1> : null}
       <slot>
         <p>
           If you're seeing this, something went wrong - and <Email /> would love to hear from you.
@@ -46,11 +46,15 @@ const {
   body {
     font-family: 'Albert Sans', sans-serif;
     font-weight: 400;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.8;
   }
   h1 {
     font-family: 'Rokkitt', serif;
     font-weight: 400;
     font-size: 6rem;
-    padding: 1rem 0;
   }
 </style>

@@ -2,9 +2,8 @@
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 ---
 
-<DefaultLayout>
+<DefaultLayout includeHeading subtitle="Media">
   <section id="media">
-    <h1>Media</h1>
     <article>
       <p>
         My experience as an artist continues to develop with my work on the web. If you're interested in learning about
@@ -17,13 +16,22 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
     </article>
     <figure>
       <iframe
-        width="480"
-        height="240"
         src="https://www.youtube-nocookie.com/embed/u76CKtRjgq0"
         title="YouTube video player"
-        frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </figure>
   </section>
 </DefaultLayout>
+
+<style>
+  figure {
+    text-align: center;
+    margin: 2rem;
+  }
+  iframe {
+    border: var(--light) 3px solid;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+</style>
