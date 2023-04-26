@@ -1,17 +1,28 @@
 ---
-const { title, description, label, deployUrl, imageUrl, repoUrl } = Astro.props
+import '@fontsource/rokkitt'
+import '@fontsource/rokkitt/variable.css'
+import Link from './LinkNewTab.astro'
+import { Icon } from 'astro-icon'
+
+const { title, description, label, imageUrl, links } = Astro.props
 ---
 
 <li id={label}>
   <h2>{title}</h2>
+  <p>{description}</p>
   <div class="container">
-    <img src={imageUrl} width="50%" />
+    <img src={imageUrl} />
     <div class="link-container">
-      <a href={deployUrl}>Live Deploy</a>
-      <a href={repoUrl}>Github Repo</a>
+      {
+        links.map((item) => (
+          <Link link={item.url} class={'deploy-link'}>
+            <Icon name={item.icon} />
+            {item.content}
+          </Link>
+        ))
+      }
     </div>
   </div>
-  <p>{description}</p>
 </li>
 
 <style>
@@ -19,26 +30,79 @@ const { title, description, label, deployUrl, imageUrl, repoUrl } = Astro.props
     list-style: none;
     padding: 0.5rem 0;
   }
+
   h2 {
-    font-size: 3rem;
+    font-family: 'Rokkitt', serif;
+    font-size: 4rem;
+    line-height: 100%;
     font-weight: 800;
     background-color: var(--light);
     color: var(--dark);
-    margin: 1rem 0;
-    padding-inline: 1rem;
+    margin: 2rem 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
   }
+
+  h2:before,
+  h2:after {
+    background-color: var(--dark);
+    display: inline-block;
+    height: 10px;
+    content: '';
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  h2:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  h2:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+
+  img {
+    transition: all ease-in 250ms;
+    width: 50%;
+    box-shadow: 3px 3px 5px var(--mid);
+    filter: grayscale(100%);
+    filter: saturate(100%);
+  }
+
+  img:hover,
+  img:focus {
+    transition: all ease-in 250ms;
+    transform: translate(-1.5px, -1.5px);
+    box-shadow: 5px 5px 9px var(--mid);
+    filter: grayscale(0%);
+    filter: saturate(120%);
+  }
+
   .container {
     display: flex;
   }
+
   .link-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem;
+    padding-inline-start: 3rem;
   }
-  .link-container a {
+
+  .deploy-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
     font-size: 1.5rem;
+  }
+
+  [astro-icon] {
+    width: 1.8rem;
   }
 </style>
