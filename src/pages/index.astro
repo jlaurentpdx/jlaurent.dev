@@ -5,18 +5,20 @@ import '@fontsource/rokkitt/variable.css'
 ---
 
 <Layout>
-  <h1>
-    Howdy.<br /> I'm
-    <span class="heading-name">Jordan</span>
-  </h1>
-  <p>
-    — a full-stack
-    <span class="role">software developer</span>,
-    <span class="role">multimedia artist</span>, and
-    <span class="role">educator</span>
-    in Portland, Oregon making people-first, user-friendly tools and technology with an emphasis on design, inclusivity,
-    and accessibility.
-  </p>
+  <div class="container">
+    <h1>
+      Howdy.<br /> I'm
+      <span class="heading-name">Jordan</span>
+    </h1>
+    <p>
+      — a full-stack
+      <span class="role">software developer</span>,
+      <span class="role">multimedia artist</span>, and
+      <span class="role">educator</span>
+      in Portland, Oregon making people-first, user-friendly tools and technology with an emphasis on design, inclusivity,
+      and accessibility.
+    </p>
+  </div>
 </Layout>
 
 <style>
@@ -27,14 +29,18 @@ import '@fontsource/rokkitt/variable.css'
     padding: 1rem 0;
   }
 
+  .container {
+    background: linear-gradient(300deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--dark);
+  }
+
   .heading-name,
   .role {
     font-weight: 800;
-    background: linear-gradient(330deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
-    background-size: 500% 500%;
-    animation: gradient 30s ease infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -47,6 +53,12 @@ import '@fontsource/rokkitt/variable.css'
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .container {
+      -webkit-text-fill-color: var(--light);
     }
   }
 </style>
