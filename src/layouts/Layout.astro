@@ -2,7 +2,6 @@
 import Header from '../components/astro/Header.astro'
 import Footer from '../components/astro/Footer.astro'
 import Email from '../components/astro/Email.astro'
-import '../styles/global.css'
 import '@fontsource/albert-sans'
 import '@fontsource/albert-sans/variable.css'
 import '@fontsource/rokkitt'
@@ -15,9 +14,6 @@ const {
   description = 'Software Developer in Portland, Oregon.',
   author = 'Jordan Laurent',
 } = Astro.props
-
-const errorMessage =
-  "If you're seeing this, something went terribly wrong — and I would love to hear from you! Please reach out to me at the email below:"
 ---
 
 <html lang="en" dir="ltr">
@@ -36,7 +32,13 @@ const errorMessage =
     <main>
       {includeHeading ? <h1>{subtitle}</h1> : null}
       <slot>
-        <p>{errorMessage} <Email /></p>
+        <section id="slotError">
+          <h1 class="error-header">Whoops.</h1>
+          <article>
+            If you're seeing this, something went terribly wrong — and I would love to hear from you! Please reach out
+            to me at <Email />.
+          </article>
+        </section>
       </slot>
     </main>
     <Footer />
@@ -44,17 +46,74 @@ const errorMessage =
 </html>
 
 <style>
+  .error-header {
+    font-style: italic;
+  }
+</style>
+
+<style is:global>
+  :root {
+    --dark: hsl(216, 23%, 23%);
+    --light: hsl(0, 0%, 98%);
+    --mid: hsl(0, 0%, 70%);
+    --light-gradient: linear-gradient(
+      90deg,
+      hsl(216deg 24% 96%) 0%,
+      hsl(216deg 24% 97%) 2%,
+      hsl(216deg 24% 98%) 5%,
+      hsl(216deg 24% 99%) 8%,
+      hsl(300deg 25% 98%) 13%,
+      hsl(300deg 25% 98%) 19%,
+      hsl(300deg 25% 98%) 30%,
+      hsl(300deg 25% 98%) 53%,
+      hsl(300deg 25% 98%) 76%,
+      hsl(300deg 25% 98%) 85%,
+      hsl(300deg 25% 98%) 91%,
+      hsl(216deg 24% 99%) 94%,
+      hsl(216deg 24% 98%) 97%,
+      hsl(216deg 24% 97%) 99%,
+      hsl(216deg 24% 96%) 100%
+    );
+    --dark-gradient: linear-gradient(
+      15deg,
+      hsl(221deg 100% 9%) 8%,
+      hsl(221deg 79% 10%) 36%,
+      hsl(224deg 63% 12%) 49%,
+      hsl(227deg 50% 14%) 59%,
+      hsl(231deg 41% 16%) 68%,
+      hsl(235deg 35% 17%) 75%,
+      hsl(238deg 30% 19%) 81%,
+      hsl(242deg 27% 20%) 87%,
+      hsl(246deg 25% 22%) 93%,
+      hsl(249deg 23% 23%) 99%
+    );
+  }
+
+  /* ================ LIGHT MODE SETTINGS ================ */
+
+  html {
+    height: 100%;
+    background-image: var(--light-gradient);
+    color: var(--dark);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     width: 100%;
     max-width: 80ch;
     margin: 0 auto;
     padding: 1rem;
+    color: inherit;
     font-family: 'Albert Sans', sans-serif;
+    font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.8;
   }
 
-  :global(h1) {
+  h1 {
     margin: 0;
     padding: 1rem 0;
     font-family: 'Rokkitt', serif;
@@ -63,23 +122,38 @@ const errorMessage =
     line-height: normal;
   }
 
-  :global(p),
-  :global(a),
-  :global(address),
-  :global(article) {
-    font-size: 1.3rem;
+  p,
+  a,
+  address,
+  article {
+    font-size: inherit;
   }
 
-  :global(a) {
-    color: var(--dark);
+  a {
+    color: inherit;
     text-decoration: underline dotted var(--mid);
     text-underline-offset: 0.25rem;
   }
 
-  :global(a:hover),
-  :global(a:focus) {
-    outline: solid var(--dark) 2px;
+  a:hover,
+  a:focus {
+    outline: var(--dark) solid 2px;
     outline-offset: 1px;
     border-radius: 2px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-image: var(--dark-gradient);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: hsl(221deg 100% 9%);
+      color: var(--light);
+    }
+
+    a:hover,
+    a:focus {
+      outline: var(--light) solid 2px;
+    }
   }
 </style>
