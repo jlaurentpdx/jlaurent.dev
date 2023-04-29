@@ -7,6 +7,7 @@ import { Icon } from 'astro-icon'
   <nav>
     <a href="/">
       <Icon name="logo" />
+      <span class="link-text">Homepage</span>
     </a>
     <Navigation />
   </nav>
@@ -14,8 +15,33 @@ import { Icon } from 'astro-icon'
 
 <style>
   [astro-icon] {
-    width: 96px;
+    width: 128px;
+    padding: 0.5rem;
     fill: var(--dark);
+    transition: all 200ms ease-in-out;
+    fill: var(--dark);
+    stroke: var(--dark);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 20px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a:hover > .link-text,
+  a:focus > .link-text {
+    visibility: visible;
+  }
+
+  a:hover > [astro-icon],
+  a:focus > [astro-icon] {
+    transition: all 300ms ease-in-out;
+    fill: transparent;
   }
 
   nav {
@@ -24,9 +50,14 @@ import { Icon } from 'astro-icon'
     justify-content: space-between;
   }
 
+  .link-text {
+    visibility: hidden;
+  }
+
   @media (prefers-color-scheme: dark) {
     [astro-icon] {
       fill: var(--light);
+      stroke: var(--light);
     }
   }
 </style>
