@@ -1,11 +1,11 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Layout from '../../layouts/Layout.astro'
 import Project from '../../components/astro/Project.astro'
 import { projects } from '../../data/projects'
 import { techStack } from '../../data/techStack'
 ---
 
-<DefaultLayout includeHeading subtitle="Projects">
+<Layout includeHeading subtitle="Projects">
   <section id="projects">
     <article>
       <p>
@@ -24,7 +24,7 @@ import { techStack } from '../../data/techStack'
     </article>
   </section>
   {projects.map((project) => <Project {...project} />)}
-</DefaultLayout>
+</Layout>
 
 <style>
   .tech-stack {

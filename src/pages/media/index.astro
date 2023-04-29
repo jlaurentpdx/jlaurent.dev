@@ -1,8 +1,8 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Layout from '../../layouts/Layout.astro'
 ---
 
-<DefaultLayout includeHeading subtitle="Media">
+<Layout includeHeading subtitle="Media">
   <section id="media">
     <article>
       <p>
@@ -22,7 +22,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
         allowfullscreen></iframe>
     </figure>
   </section>
-</DefaultLayout>
+</Layout>
 
 <style>
   figure {
@@ -30,7 +30,6 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
     margin: 2rem;
   }
   iframe {
-    border: var(--light) 3px solid;
     width: 100%;
     aspect-ratio: 16 / 9;
   }

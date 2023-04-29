@@ -1,10 +1,10 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Layout from '../layouts/Layout.astro'
 import '@fontsource/rokkitt'
 import '@fontsource/rokkitt/variable.css'
 ---
 
-<DefaultLayout>
+<Layout>
   <h1>
     Howdy.<br /> I'm
     <span class="heading-name">Jordan</span>
@@ -17,7 +17,7 @@ import '@fontsource/rokkitt/variable.css'
     in Portland, Oregon making people-first, user-friendly tools and technology with an emphasis on design, inclusivity,
     and accessibility.
   </p>
-</DefaultLayout>
+</Layout>
 
 <style>
   h1 {
@@ -27,19 +27,10 @@ import '@fontsource/rokkitt/variable.css'
     padding: 1rem 0;
   }
 
-  .heading-name {
-    font-weight: 800;
-    background: linear-gradient(330deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
-    background-size: 500% 500%;
-    animation: gradient 30s ease infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
+  .heading-name,
   .role {
     font-weight: 800;
-    background: linear-gradient(210deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
+    background: linear-gradient(330deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
     background-size: 500% 500%;
     animation: gradient 30s ease infinite;
     background-clip: text;
