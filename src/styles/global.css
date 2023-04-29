@@ -42,27 +42,14 @@ html {
   color: var(--dark);
 }
 
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.8;
-}
-
 * {
   box-sizing: border-box;
 }
 
 h1 {
-  font-size: 4rem;
-  font-weight: 800;
+  padding: 1rem 0;
   margin: 0;
   line-height: normal;
-}
-
-h2 {
-  font-size: 2rem;
 }
 
 p,
@@ -71,7 +58,7 @@ article {
 }
 
 a {
-  text-decoration: underline dotted #bbb;
+  text-decoration: underline dotted var(--mid);
   text-underline-offset: 0.25rem;
   color: var(--dark);
 }
@@ -81,19 +68,6 @@ a:focus {
   outline: solid var(--dark) 2px;
   outline-offset: 1px;
   border-radius: 2px;
-}
-
-code {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-    monospace;
-}
-
-hr {
-  margin: 4rem 0;
-}
-
-address {
-  display: inline;
 }
 
 /* ================ DARK MODE SETTINGS ================ */
