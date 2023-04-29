@@ -15,6 +15,9 @@ const {
   description = 'Software Developer in Portland, Oregon.',
   author = 'Jordan Laurent',
 } = Astro.props
+
+const errorMessage =
+  "If you're seeing this, something went terribly wrong — and I would love to hear from you! Please reach out to me at the email below:"
 ---
 
 <html lang="en" dir="ltr">
@@ -33,9 +36,7 @@ const {
     <main>
       {includeHeading ? <h1>{subtitle}</h1> : null}
       <slot>
-        <p>
-          If you're seeing this, something went wrong - and <Email /> would love to hear from you.
-        </p>
+        <p>{errorMessage} <Email /></p>
       </slot>
     </main>
     <Footer />
@@ -44,17 +45,41 @@ const {
 
 <style>
   body {
-    font-family: 'Albert Sans', sans-serif;
-    font-weight: 400;
-    margin: 0 auto;
     width: 100%;
     max-width: 80ch;
+    margin: 0 auto;
     padding: 1rem;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 400;
     line-height: 1.8;
   }
-  h1 {
+
+  :global(h1) {
+    margin: 0;
+    padding: 1rem 0;
     font-family: 'Rokkitt', serif;
-    font-weight: 400;
     font-size: 6rem;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  :global(p),
+  :global(a),
+  :global(address),
+  :global(article) {
+    font-size: 1.3rem;
+  }
+
+  :global(a) {
+    color: var(--dark);
+    text-decoration: underline dotted var(--mid);
+    text-underline-offset: 0.25rem;
+  }
+
+  :global(a:hover),
+  :global(a:focus) {
+    outline: solid var(--dark) 2px;
+    outline-offset: 1px;
+    border-radius: 2px;
   }
 </style>

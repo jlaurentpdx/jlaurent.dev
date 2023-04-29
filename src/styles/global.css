@@ -36,6 +36,7 @@
 }
 
 /* ================ LIGHT MODE SETTINGS ================ */
+
 html {
   height: 100%;
   background-image: var(--light-gradient);
@@ -46,30 +47,6 @@ html {
   box-sizing: border-box;
 }
 
-h1 {
-  padding: 1rem 0;
-  margin: 0;
-  line-height: normal;
-}
-
-p,
-article {
-  font-size: 1.3rem;
-}
-
-a {
-  text-decoration: underline dotted var(--mid);
-  text-underline-offset: 0.25rem;
-  color: var(--dark);
-}
-
-a:hover,
-a:focus {
-  outline: solid var(--dark) 2px;
-  outline-offset: 1px;
-  border-radius: 2px;
-}
-
 /* ================ DARK MODE SETTINGS ================ */
 @media (prefers-color-scheme: dark) {
   html {
@@ -78,14 +55,5 @@ a:focus {
     background-repeat: no-repeat;
     background-color: hsl(221deg 100% 9%);
     color: var(--light);
-  }
-
-  a {
-    color: var(--light);
-  }
-
-  a:hover,
-  a:focus {
-    outline: solid var(--light) 2px;
   }
 }
