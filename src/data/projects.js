@@ -49,4 +49,19 @@ export const projects = [
       },
     ],
   },
+  {
+    title: 'Beginning Maker Tech',
+    label: 'beginning-maker-tech',
+    description:
+      'Taught from January to March 2019, Beginning Maker Techniques and Technologies introduced students to programming and microelectronics with Arduino, CNC laser cutting, and graphic design with Adobe Illustrator.',
+    imageUrl: '/images/bmtech.jpg',
+    links: [
+      {
+        content: 'Archived Course',
+        url: 'https://jlaurentpdx.github.io/beginning-maker-tech/',
+        src: 'github',
+        icon: icons.githubPages,
+      },
+    ],
+  },
 ]

@@ -36,8 +36,6 @@ const { title, description, label, imageUrl, links } = Astro.props
     font-size: 4rem;
     line-height: 100%;
     font-weight: 800;
-    background-color: var(--light);
-    color: var(--dark);
     margin: 2rem 0;
     padding: 0;
     text-align: center;
@@ -65,20 +63,19 @@ const { title, description, label, imageUrl, links } = Astro.props
   }
 
   img {
-    transition: all ease-in 250ms;
+    transition: all linear 100ms;
+    transition-delay: 200ms;
     width: 50%;
     box-shadow: 3px 3px 5px var(--mid);
-    filter: grayscale(100%);
-    filter: saturate(100%);
+    filter: opacity(60%);
   }
 
   img:hover,
   img:focus {
-    transition: all ease-in 250ms;
-    transform: translate(-1.5px, -1.5px);
+    transition: all linear 200ms;
+    transform: translate(-2px, -3px);
     box-shadow: 5px 5px 9px var(--mid);
-    filter: grayscale(0%);
-    filter: saturate(120%);
+    filter: opacity(100%);
   }
 
   .container {
@@ -104,5 +101,21 @@ const { title, description, label, imageUrl, links } = Astro.props
 
   [astro-icon] {
     width: 1.8rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    h2:before,
+    h2:after {
+      background-color: var(--light);
+    }
+
+    img {
+      box-shadow: 3px 3px 5px #111;
+    }
+
+    img:hover,
+    img:focus {
+      box-shadow: 5px 5px 9px #111;
+    }
   }
 </style>
