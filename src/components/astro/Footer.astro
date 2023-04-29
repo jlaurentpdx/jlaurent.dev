@@ -8,19 +8,21 @@ const { linkedIn, github } = contactLinks
 ---
 
 <footer>
-  <p>Built and designed by Jordan Laurent</p>
-  <div class="contacts-container">
-    <Link link={github.link}>
-      <Icon name="ion:logo-github" />
-    </Link>
+  <div class="container">
+    <p>Built and designed by<br />Jordan Laurent in Portland, OR</p>
+    <div class="contacts-container">
+      <Link link={github.link}>
+        <Icon name="ion:logo-github" />
+      </Link>
 
-    <Link link={linkedIn.link}>
-      <Icon name="ion:logo-linkedin" />
-    </Link>
+      <Link link={linkedIn.link}>
+        <Icon name="ion:logo-linkedin" />
+      </Link>
 
-    <Email>
-      <Icon name="ion:mail" />
-    </Email>
+      <Email>
+        <Icon name="ion:mail" />
+      </Email>
+    </div>
   </div>
 </footer>
 
@@ -39,7 +41,7 @@ const { linkedIn, github } = contactLinks
     font-size: 0;
   }
 
-  footer {
+  .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,7 +50,21 @@ const { linkedIn, github } = contactLinks
     color: var(--mid);
   }
 
-  footer a {
+  .container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  footer {
+    padding-top: 3rem;
+  }
+
+  p {
+    display: block;
+  }
+
+  a {
     text-decoration: none;
     text-underline-offset: 0;
   }
