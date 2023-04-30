@@ -63,17 +63,17 @@ const { title, description, label, imageUrl, links } = Astro.props
   }
 
   img {
-    transition: all linear 100ms;
-    transition-delay: 200ms;
+    transition: all ease-in 200ms;
+    transition-delay: 100ms;
     width: 50%;
     box-shadow: 3px 3px 5px var(--mid);
-    filter: opacity(60%);
+    filter: opacity(80%);
   }
 
   img:hover,
   img:focus {
-    transition: all linear 200ms;
-    transform: translate(-2px, -3px);
+    transition: all ease-out 200ms;
+    transform: translate(-0.5px, -0.5px);
     box-shadow: 5px 5px 9px var(--mid);
     filter: opacity(100%);
   }
