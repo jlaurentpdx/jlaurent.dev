@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import '@fontsource/rokkitt'
-import '@fontsource/rokkitt/variable.css'
 ---
 
 <Layout>
-  <div class="container">
+  <div class="gradient-container">
     <h1>
       Howdy.<br /> I'm
       <span class="heading-name">Jordan</span>
@@ -22,28 +20,6 @@ import '@fontsource/rokkitt/variable.css'
 </Layout>
 
 <style>
-  h1 {
-    font-family: 'Rokkitt', serif;
-    font-weight: 400;
-    font-size: 8rem;
-    padding: 1rem 0;
-  }
-
-  .container {
-    background: linear-gradient(300deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: var(--dark);
-  }
-
-  .heading-name,
-  .role {
-    font-weight: 800;
-    -webkit-text-fill-color: transparent;
-  }
-
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -56,8 +32,27 @@ import '@fontsource/rokkitt/variable.css'
     }
   }
 
+  .gradient-container {
+    background: linear-gradient(300deg, #ee7752, #e73c7e, #23d5b1, #4b7fd9);
+    background-size: 400% 400%;
+    background-clip: text;
+    animation: gradient 20s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--dark);
+  }
+
+  .heading-name,
+  .role {
+    font-weight: 800;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
   @media (prefers-color-scheme: dark) {
-    .container {
+    .gradient-container {
       -webkit-text-fill-color: var(--light);
     }
   }
