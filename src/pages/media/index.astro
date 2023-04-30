@@ -1,5 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import LinkNewTab from '../../components/astro/LinkNewTab.astro'
+import { mediaLinks } from '../../data/mediaLinks'
+
+const { collabLab, techTalk } = mediaLinks
 ---
 
 <Layout includeHeading subtitle="Media">
@@ -8,29 +12,27 @@ import Layout from '../../layouts/Layout.astro'
       <p>
         My experience as an artist continues to develop with my work on the web. If you're interested in learning about
         my winding path from music and education to code, I gave a
-        <a href="https://www.youtube.com/watch?v=u76CKtRjgq0" target="_blank" rel="noopener">2022 tech talk</a>
-        on how making music led me to pursue a future in code in collaboration with
-        <a href="https://the-collab-lab.codes/" target="_blank" rel="noopener">The Collab Lab</a>, which you can view
-        below.
+        <LinkNewTab {...techTalk} /> on how making music led me to pursue a future in code in collaboration with
+        <LinkNewTab {...collabLab} />, which you can view below.
       </p>
+      <figure>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/u76CKtRjgq0"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </figure>
     </article>
-    <figure>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/u76CKtRjgq0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </figure>
   </section>
-</Layout>
 
-<style>
-  figure {
-    text-align: center;
-    margin: 2rem;
-  }
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-</style>
+  <style>
+    figure {
+      margin: 2rem;
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  </style>
+</Layout>

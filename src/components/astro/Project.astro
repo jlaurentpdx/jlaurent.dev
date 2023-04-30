@@ -26,56 +26,8 @@ const { title, description, label, imageUrl, links } = Astro.props
 </li>
 
 <style>
-  li {
-    list-style: none;
-    padding: 0.5rem 0;
-  }
-
-  h2 {
-    font-family: 'Rokkitt', serif;
-    font-size: 4rem;
-    line-height: 100%;
-    font-weight: 800;
-    margin: 2rem 0;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  h2:before,
-  h2:after {
-    background-color: var(--dark);
-    display: inline-block;
-    height: 10px;
-    content: '';
-    position: relative;
-    vertical-align: middle;
-    width: 50%;
-  }
-
-  h2:before {
-    right: 0.5em;
-    margin-left: -50%;
-  }
-  h2:after {
-    left: 0.5em;
-    margin-right: -50%;
-  }
-
-  img {
-    transition: all ease-in 200ms;
-    transition-delay: 100ms;
-    width: 50%;
-    box-shadow: 3px 3px 5px var(--mid);
-    filter: opacity(80%);
-  }
-
-  img:hover,
-  img:focus {
-    transition: all ease-out 200ms;
-    transform: translate(-0.5px, -0.5px);
-    box-shadow: 5px 5px 9px var(--mid);
-    filter: opacity(100%);
+  [astro-icon] {
+    width: 1.8rem;
   }
 
   .container {
@@ -92,15 +44,65 @@ const { title, description, label, imageUrl, links } = Astro.props
 
   .deploy-link {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
     gap: 10px;
     width: fit-content;
     font-size: 1.5rem;
   }
 
-  [astro-icon] {
-    width: 1.8rem;
+  li {
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  h2 {
+    margin: 2rem 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Rokkitt', serif;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 100%;
+    overflow: hidden;
+  }
+
+  h2:before,
+  h2:after {
+    display: inline-block;
+    width: 50%;
+    height: 10px;
+    position: relative;
+    content: '';
+    background-color: var(--dark);
+    vertical-align: middle;
+  }
+
+  h2:before {
+    margin-left: -50%;
+    right: 0.5em;
+  }
+
+  h2:after {
+    margin-right: -50%;
+    left: 0.5em;
+  }
+
+  img {
+    width: 50%;
+    padding: 2px;
+    transition: all ease-in 200ms;
+    transition-delay: 100ms;
+    box-shadow: 3px 3px 5px var(--mid);
+    filter: opacity(80%);
+  }
+
+  img:hover,
+  img:focus {
+    transition: all ease-out 200ms;
+    transform: translate(-0.5px, -0.5px);
+    box-shadow: 5px 5px 9px var(--mid);
+    filter: opacity(100%);
   }
 
   @media (prefers-color-scheme: dark) {
