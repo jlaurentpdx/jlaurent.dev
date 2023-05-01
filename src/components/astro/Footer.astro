@@ -12,11 +12,11 @@ const { linkedIn, github } = contactLinks
     <p>Built and designed by<br />Jordan Laurent in Portland, OR</p>
     <div class="contacts-container">
       <Link link={github.link}>
-        <Icon name="ion:logo-github" />
+        <Icon name="ion:logo-github" aria-label={github.label} />
       </Link>
 
       <Link link={linkedIn.link}>
-        <Icon name="ion:logo-linkedin" />
+        <Icon name="ion:logo-linkedin" aria-label={linkedIn.label} />
       </Link>
 
       <Email>
