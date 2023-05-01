@@ -4,14 +4,14 @@ import '@fontsource/rokkitt/variable.css'
 import Link from './LinkNewTab.astro'
 import { Icon } from 'astro-icon'
 
-const { title, description, label, imageUrl, links } = Astro.props
+const { title, description, label, imageUrl, imageAlt, links } = Astro.props
 ---
 
 <li id={label}>
   <h2>{title}</h2>
-  <p>{description}</p>
+  <p set:html={description}>{description}</p>
   <div class="container">
-    <img src={imageUrl} />
+    <img src={imageUrl} alt={imageAlt} />
     <div class="link-container">
       {
         links.map((item) => (
