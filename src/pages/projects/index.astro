@@ -17,11 +17,20 @@ import { techStack } from '../../data/techStack'
       </p>
     </article>
   </section>
-  {projects.map((project) => <Project {...project} />)}
+  <ul id="projects-list">{projects.map((project) => <Project {...project} />)}</ul>
 </Layout>
 
 <style>
   .tech-stack {
     font-weight: 600;
+  }
+
+  .project-title {
+    font-weight: 800;
+  }
+
+  ul {
+    margin: 0;
+    padding: 2rem 0;
   }
 </style>
