@@ -4,7 +4,7 @@ import '@fontsource/rokkitt/variable.css'
 import LinkNewTab from './LinkNewTab.astro'
 import { Icon } from 'astro-icon'
 
-interface ProjectLink {
+type ProjectLink = {
   content: string
   url: string
   src: string
@@ -17,7 +17,7 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
 <li id={label}>
   <h2>{title}</h2>
   <p set:html={description}>{description}</p>
-  <div class="container">
+  <div class="project-container">
     <img src={imageUrl} alt={imageAlt} />
     <div class="link-container">
       {
@@ -34,10 +34,10 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
 
 <style>
   [astro-icon] {
-    width: 1.8rem;
+    width: 2rem;
   }
 
-  .container {
+  .project-container {
     display: flex;
   }
 
@@ -55,11 +55,11 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
     justify-content: flex-start;
     gap: 10px;
     width: fit-content;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   li {
-    padding: 0.5rem 0;
+    padding: 0.5rem 2rem;
     list-style: none;
   }
 

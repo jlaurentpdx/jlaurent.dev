@@ -1,5 +1,5 @@
 ---
-import Link from './LinkNewTab.astro'
+import LinkNewTab from './LinkNewTab.astro'
 import Email from './Email.astro'
 import { Icon } from 'astro-icon'
 import { contactLinks } from '../../data/contactLinks'
@@ -8,28 +8,26 @@ const { linkedIn, github } = contactLinks
 ---
 
 <footer>
-  <div class="container">
-    <p>Built and designed by<br />Jordan Laurent in Portland, OR</p>
-    <div class="contacts-container">
-      <Link link={github.link}>
-        <Icon name="ion:logo-github" aria-label={github.label} />
-      </Link>
+  <p>Built and designed by<br />Jordan Laurent in Portland, OR</p>
+  <div class="contacts-container">
+    <LinkNewTab link={github.link}>
+      <Icon name="ion:logo-github" aria-label={github.label} />
+    </LinkNewTab>
 
-      <Link link={linkedIn.link}>
-        <Icon name="ion:logo-linkedin" aria-label={linkedIn.label} />
-      </Link>
+    <LinkNewTab link={linkedIn.link}>
+      <Icon name="ion:logo-linkedin" aria-label={linkedIn.label} />
+    </LinkNewTab>
 
-      <Email>
-        <Icon name="ion:mail" />
-      </Email>
-    </div>
+    <Email>
+      <Icon name="ion:mail" />
+    </Email>
   </div>
 </footer>
 
 <style>
   [astro-icon] {
-    color: var(--dark);
     width: 2rem;
+    color: var(--dark);
     text-decoration: none;
   }
 
@@ -41,32 +39,20 @@ const { linkedIn, github } = contactLinks
     font-size: 0;
   }
 
-  .container {
+  footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
     width: 100%;
+    padding: 2rem 0;
     color: var(--mid);
   }
 
-  .container p {
+  footer p {
+    display: block;
+    margin: 0;
     font-size: 1rem;
     line-height: 1.5;
-    margin: 0;
-  }
-
-  footer {
-    padding-top: 1rem;
-  }
-
-  p {
-    display: block;
-  }
-
-  a {
-    text-decoration: none;
-    text-underline-offset: 0;
   }
 
   @media (prefers-color-scheme: dark) {
