@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout>
   <div class="gradient-container">
-    <h1>
+    <h1 class="intro">
       Howdy.<br /> I'm
       <span class="heading-name">Jordan</span>
     </h1>
@@ -47,7 +47,7 @@ import Layout from '../layouts/Layout.astro'
     -webkit-text-fill-color: transparent;
   }
 
-  h1 {
+  .intro {
     font-size: 8rem;
   }
 
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro'
   }
 
   @media only screen and (max-width: 800px) {
-    h1 {
+    .intro {
       font-size: 6rem;
     }
   }
