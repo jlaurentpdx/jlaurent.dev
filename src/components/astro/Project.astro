@@ -1,8 +1,15 @@
 ---
 import '@fontsource/rokkitt'
 import '@fontsource/rokkitt/variable.css'
-import Link from './LinkNewTab.astro'
+import LinkNewTab from './LinkNewTab.astro'
 import { Icon } from 'astro-icon'
+
+interface ProjectLink {
+  content: string
+  url: string
+  src: string
+  icon: string
+}
 
 const { title, description, label, imageUrl, imageAlt, links } = Astro.props
 ---
@@ -14,11 +21,11 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
     <img src={imageUrl} alt={imageAlt} />
     <div class="link-container">
       {
-        links.map((item) => (
-          <Link link={item.url} class={'deploy-link'}>
+        links.map((item: ProjectLink) => (
+          <LinkNewTab link={item.url} class={'deploy-link'}>
             <Icon name={item.icon} />
             {item.content}
-          </Link>
+          </LinkNewTab>
         ))
       }
     </div>
