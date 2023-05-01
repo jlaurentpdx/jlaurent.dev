@@ -45,8 +45,9 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
     width: 100%;
-    padding-inline-start: 3rem;
+    padding-inline-start: 4rem;
   }
 
   .deploy-link {
@@ -97,7 +98,7 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
 
   img {
     width: 50%;
-    padding: 2px;
+    padding: 0.2rem;
     transition: all ease-in 200ms;
     transition-delay: 100ms;
     box-shadow: 3px 3px 5px var(--mid);
@@ -125,6 +126,44 @@ const { title, description, label, imageUrl, imageAlt, links } = Astro.props
     img:hover,
     img:focus {
       box-shadow: 5px 5px 9px #111;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .project-container {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+
+    .link-container {
+      padding-inline-start: 0;
+    }
+
+    .deploy-link {
+      font-size: 1.5rem;
+      padding: 10px;
+      border-radius: 10px;
+      outline: var(--light) solid 2px;
+    }
+
+    li {
+      padding: 0.5rem 0rem;
+    }
+
+    h2 {
+      text-align: left;
+      font-size: 3rem;
+    }
+
+    h2:after {
+      width: 75%;
+      height: 5px;
+    }
+
+    img {
+      width: 100%;
+      padding: 0.5rem;
+      filter: opacity(100%);
     }
   }
 </style>
