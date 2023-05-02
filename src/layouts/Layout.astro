@@ -53,9 +53,9 @@ const {
 
 <style is:global>
   :root {
-    --dark: rgba(45, 56, 72, 1);
-    --light: rgba(250, 250, 250, 1);
-    --mid: rgba(179, 179, 179, 1);
+    --dark: hsl(216, 23%, 23%);
+    --light: hsl(0, 0%, 98%);
+    --mid: hsl(0, 0%, 70%);
     --light-gradient: linear-gradient(
       90deg,
       hsl(216deg 24% 96%) 0%,
@@ -154,13 +154,6 @@ const {
     a:hover,
     a:focus {
       outline: var(--light) solid 2px;
-    }
-  }
-
-  @media only screen and (max-width: 800px) {
-    a {
-      text-decoration: underline solid var(--mid);
-      text-underline-offset: unset;
     }
   }
 </style>
