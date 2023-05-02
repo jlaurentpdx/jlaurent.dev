@@ -10,7 +10,17 @@ import { techStack } from '../../data/techStack'
     <article>
       <p>
         Built with languages, libraries, and frameworks including {
-          techStack.map((item) => <span class="tech-stack">{item}, </span>)
+          techStack.map((item, index) =>
+            index < techStack.length - 1 ? (
+              <>
+                <span class="tech-stack">{item}</span>,{' '}
+              </>
+            ) : (
+              <>
+                and <span class="tech-stack">{item}</span>,{' '}
+              </>
+            )
+          )
         }
         the applications on display here highlight just a few of the open-source works I've been a part of developing, deploying,
         and contributing to.
@@ -22,7 +32,8 @@ import { techStack } from '../../data/techStack'
 
 <style>
   .tech-stack {
-    font-weight: 800;
+    font-weight: 400;
+    font-style: italic;
   }
 
   ul {
