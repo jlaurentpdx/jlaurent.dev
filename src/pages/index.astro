@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro'
 <Layout>
   <div class="gradient-container">
     <h1 class="intro">
-      Howdy.<br /> I'm
+      <span class="heading-lead">Howdy.</span> I'm
       <span class="heading-name">Jordan</span>
     </h1>
     <p>
@@ -20,19 +20,20 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style>
-  .heading-name {
-    font-weight: 600;
-  }
-
-  .role {
-    font-weight: 600;
-  }
-
   .intro {
     font-size: 4.5rem;
   }
 
-  @media only screen and (min-width: 800px) {
+  .heading-lead {
+    display: block;
+  }
+
+  .heading-name,
+  .role {
+    font-weight: 600;
+  }
+
+  @media only screen and (min-width: 600px) {
     @keyframes gradient {
       0% {
         background-position: 0% 50%;
