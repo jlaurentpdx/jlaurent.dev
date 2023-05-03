@@ -20,50 +20,60 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style>
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  .heading-name {
+    font-weight: 600;
   }
 
-  .gradient-container {
-    background: linear-gradient(300deg, hsl(14, 82%, 63%), hsl(337, 78%, 57%), hsl(168, 72%, 49%), hsl(218, 65%, 57%));
-    background-size: 400% 400%;
-    background-clip: text;
-    animation: gradient 30s ease infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: var(--dark);
-  }
-
-  .heading-name,
   .role {
-    font-weight: 800;
-    -webkit-text-fill-color: transparent;
+    font-weight: 600;
   }
 
   .intro {
-    font-size: 8rem;
+    font-size: 4.5rem;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .gradient-container {
-      -webkit-text-fill-color: var(--light);
+  @media only screen and (min-width: 800px) {
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
-  }
 
-  @media only screen and (max-width: 800px) {
     .intro {
-      font-size: 5rem;
+      font-size: 8rem;
     }
+
     .heading-name,
     .role {
-      font-weight: 400;
+      font-weight: 800;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-container {
+      background: linear-gradient(
+        300deg,
+        hsl(14, 82%, 63%),
+        hsl(337, 78%, 57%),
+        hsl(168, 72%, 49%),
+        hsl(218, 65%, 57%)
+      );
+      background-size: 400% 400%;
+      background-clip: text;
+      animation: gradient 30s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: var(--dark);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .gradient-container {
+        -webkit-text-fill-color: var(--light);
+      }
     }
   }
 </style>
