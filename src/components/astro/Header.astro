@@ -56,16 +56,16 @@ import { Icon } from 'astro-icon'
     align-items: center;
   }
 
+  @media screen and (min-width: 600px) {
+    [astro-icon] {
+      width: 8rem;
+    }
+  }
+
   @media (prefers-color-scheme: dark) {
     [astro-icon] {
       fill: var(--light);
       stroke: var(--light);
-    }
-  }
-
-  @media screen and (min-width: 600px) {
-    [astro-icon] {
-      width: 8rem;
     }
   }
 </style>

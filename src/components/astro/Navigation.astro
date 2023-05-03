@@ -17,15 +17,7 @@
     padding: 0.2rem 0.5rem;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .nav-links a:hover,
-    .nav-links a:focus {
-      background-color: var(--light);
-      color: var(--dark);
-    }
-  }
-
-  @media only screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     .nav-links {
       flex-direction: row;
       gap: 20px;
@@ -43,6 +35,14 @@
       outline: none;
       border-radius: 5px;
       transition: background ease-out 200ms;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-links a:hover,
+    .nav-links a:focus {
+      background-color: var(--light);
+      color: var(--dark);
     }
   }
 </style>

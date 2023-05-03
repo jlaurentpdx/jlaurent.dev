@@ -59,12 +59,6 @@ const { linkedIn, github } = contactLinks
     border-top-width: 1px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    [astro-icon] {
-      color: var(--light);
-    }
-  }
-
   @media screen and (min-width: 600px) {
     footer {
       flex-direction: row;
@@ -77,6 +71,12 @@ const { linkedIn, github } = contactLinks
       width: 30%;
       padding-top: 0;
       border-top-width: 0px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    [astro-icon] {
+      color: var(--light);
     }
   }
 </style>

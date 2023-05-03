@@ -144,16 +144,6 @@ const {
     border-radius: 2px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    html {
-      background-image: var(--dark-gradient);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: hsl(221deg 100% 9%);
-      color: var(--light);
-    }
-  }
-
   @media screen and (min-width: 600px) {
     body {
       font-size: 1.3rem;
@@ -161,6 +151,16 @@ const {
 
     h1 {
       font-size: 6rem;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      background-image: var(--dark-gradient);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: hsl(221deg 100% 9%);
+      color: var(--light);
     }
   }
 </style>
