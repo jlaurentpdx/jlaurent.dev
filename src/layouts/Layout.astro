@@ -33,7 +33,7 @@ const {
       {includeHeading ? <h1>{subtitle}</h1> : null}
       <slot>
         <section id="slotError">
-          <h1 class="error-header">Whoops.</h1>
+          <h1 class="error-header">...whoops.</h1>
           <article>
             If you're seeing this, something went terribly wrong — and I would love to hear from you! Please reach out
             to me at <Email />.
@@ -95,6 +95,7 @@ const {
     height: 100%;
     background-image: var(--light-gradient);
     color: var(--dark);
+    scroll-behavior: smooth;
   }
 
   * {
@@ -126,18 +127,21 @@ const {
   a,
   address,
   article {
+    color: inherit;
     font-size: inherit;
   }
 
   a {
-    color: inherit;
     text-decoration: underline dotted var(--mid);
     text-underline-offset: 0.25rem;
   }
 
   a:hover,
-  a:focus {
-    outline: var(--dark) solid 2px;
+  a:focus,
+  a:active {
+    outline-color: inherit;
+    outline-style: solid;
+    outline-width: 2px;
     outline-offset: 1px;
     border-radius: 2px;
   }
@@ -149,11 +153,6 @@ const {
       background-repeat: no-repeat;
       background-color: hsl(221deg 100% 9%);
       color: var(--light);
-    }
-
-    a:hover,
-    a:focus {
-      outline: var(--light) solid 2px;
     }
   }
 </style>
