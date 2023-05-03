@@ -55,7 +55,7 @@ const {
   :root {
     --dark: hsl(216, 23%, 23%);
     --light: hsl(0, 0%, 98%);
-    --mid: hsl(0, 0%, 70%);
+    --mid: rgba(179, 179, 179, 0.8);
     --light-gradient: linear-gradient(
       90deg,
       hsl(216deg 24% 96%) 0%,
@@ -113,12 +113,20 @@ const {
   }
 
   h1 {
+    font-size: 4.5rem;
+    line-height: normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
     padding: 1rem 0;
     font-family: 'Rokkitt', serif;
-    font-size: 4.5rem;
     font-weight: 400;
-    line-height: normal;
   }
 
   p,

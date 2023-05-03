@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro'
 <Layout>
   <div class="gradient-container">
     <h1 class="intro">
-      <span class="heading-lead">Howdy.</span> I'm
+      <span class="heading-greeting">Howdy.</span> I'm
       <span class="heading-name">Jordan</span>
     </h1>
     <p>
@@ -20,32 +20,37 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style>
-  .intro {
-    font-size: 4.5rem;
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
-  .heading-lead {
+  .gradient-container {
+    background: linear-gradient(300deg, hsl(14, 82%, 63%), hsl(337, 78%, 57%), hsl(168, 72%, 49%), hsl(218, 65%, 57%));
+    background-size: 400% 400%;
+    background-clip: text;
+    animation: gradient 30s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--dark);
+  }
+
+  .heading-greeting {
     display: block;
   }
 
   .heading-name,
   .role {
-    font-weight: 600;
+    -webkit-text-fill-color: transparent;
   }
 
   @media screen and (min-width: 600px) {
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
     .intro {
       font-size: 8rem;
     }
@@ -53,28 +58,12 @@ import Layout from '../layouts/Layout.astro'
     .heading-name,
     .role {
       font-weight: 800;
-      -webkit-text-fill-color: transparent;
     }
+  }
 
+  @media (prefers-color-scheme: dark) {
     .gradient-container {
-      background: linear-gradient(
-        300deg,
-        hsl(14, 82%, 63%),
-        hsl(337, 78%, 57%),
-        hsl(168, 72%, 49%),
-        hsl(218, 65%, 57%)
-      );
-      background-size: 400% 400%;
-      background-clip: text;
-      animation: gradient 30s ease infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: var(--dark);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .gradient-container {
-        -webkit-text-fill-color: var(--light);
-      }
+      -webkit-text-fill-color: var(--light);
     }
   }
 </style>
