@@ -1,0 +1,123 @@
+:root {
+  --dark: hsl(216, 23%, 23%);
+  --light: hsl(0, 0%, 98%);
+  --mid: hsl(0, 0%, 70%);
+  --light-gradient: linear-gradient(
+    90deg,
+    hsl(216deg 24% 96%) 0%,
+    hsl(216deg 24% 97%) 2%,
+    hsl(216deg 24% 98%) 5%,
+    hsl(216deg 24% 99%) 8%,
+    hsl(300deg 25% 98%) 13%,
+    hsl(300deg 25% 98%) 19%,
+    hsl(300deg 25% 98%) 30%,
+    hsl(300deg 25% 98%) 53%,
+    hsl(300deg 25% 98%) 76%,
+    hsl(300deg 25% 98%) 85%,
+    hsl(300deg 25% 98%) 91%,
+    hsl(216deg 24% 99%) 94%,
+    hsl(216deg 24% 98%) 97%,
+    hsl(216deg 24% 97%) 99%,
+    hsl(216deg 24% 96%) 100%
+  );
+  --dark-gradient: linear-gradient(
+    15deg,
+    hsl(221deg 100% 9%) 8%,
+    hsl(221deg 79% 10%) 36%,
+    hsl(224deg 63% 12%) 49%,
+    hsl(227deg 50% 14%) 59%,
+    hsl(231deg 41% 16%) 68%,
+    hsl(235deg 35% 17%) 75%,
+    hsl(238deg 30% 19%) 81%,
+    hsl(242deg 27% 20%) 87%,
+    hsl(246deg 25% 22%) 93%,
+    hsl(249deg 23% 23%) 99%
+  );
+}
+
+html {
+  height: 100%;
+  background-image: var(--light-gradient);
+  color: var(--dark);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: calc(1em + 0.725rem);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  width: 100%;
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 1rem;
+  color: inherit;
+  font-family: Segoe UI, Tahoma, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 4.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 1rem 0;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-weight: 400;
+}
+
+p,
+a,
+address,
+article {
+  color: inherit;
+  font-size: inherit;
+}
+
+a {
+  text-decoration-color: var(--mid);
+  text-underline-offset: 0.25rem;
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline-color: inherit;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  a {
+    text-decoration-style: dotted;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-image: var(--dark-gradient);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: hsl(221deg 100% 9%);
+    color: var(--light);
+  }
+}
