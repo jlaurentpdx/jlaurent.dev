@@ -22,21 +22,21 @@ import Layout from '../layouts/Layout.astro'
 <style>
   @keyframes gradient {
     0% {
-      background-position: 0% 50%;
-    }
-    50% {
       background-position: 100% 50%;
     }
-    100% {
+    50% {
       background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
     }
   }
 
   .gradient-container {
-    background: linear-gradient(300deg, hsl(14, 82%, 63%), hsl(337, 78%, 57%), hsl(168, 72%, 49%), hsl(218, 65%, 57%));
-    background-size: 400% 400%;
+    background: linear-gradient(320deg, hsl(218, 65%, 57%), hsl(337, 78%, 57%), hsl(14, 96%, 71%), hsl(56, 72%, 49%));
+    background-size: 300% 200%;
     background-clip: text;
-    animation: gradient 30s ease infinite;
+    animation: gradient 5s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: var(--dark);
   }
