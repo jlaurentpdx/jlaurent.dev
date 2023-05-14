@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 386.54 238.74">\
-  <g id="Layer_1-2">
-    <path class="cls-1" d="m193.27,193.27V45.47L10,228.74h366.54V10l-183.27,183.27Z"/>
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256">
+  <g>
+    <path class="stroke base" d="M60,240L440,240"></path>
+    <path class="stroke left-fill" d="M440,240L45,240L240,40L240,210L210,240"></path>
+    <path class="stroke right-fill" d="M210,240L440,10L440,240"></path>
   </g>
 </svg>
