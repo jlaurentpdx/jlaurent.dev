@@ -15,7 +15,12 @@ import { Icon } from 'astro-icon'
 
 <style>
   @keyframes sawtooth_draw {
-    70% {
+    0% {
+      fill: inherit;
+      stroke: inherit;
+      stroke-dashoffset: 0;
+    }
+    50% {
       fill: transparent;
     }
     100% {
@@ -55,8 +60,9 @@ import { Icon } from 'astro-icon'
       fill: transparent;
       stroke: transparent;
       animation-name: sawtooth_draw;
-      animation-duration: 1500ms;
-      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-duration: 2000ms;
+      animation-fill-mode: both;
       animation-timing-function: ease-in-out;
     }
 
@@ -71,7 +77,7 @@ import { Icon } from 'astro-icon'
       stroke-dasharray: 553 555;
       stroke-dashoffset: 554;
 
-      animation-delay: 500ms;
+      animation-delay: 200ms;
     }
   }
 
