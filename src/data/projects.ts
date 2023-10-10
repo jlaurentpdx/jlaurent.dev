@@ -12,19 +12,13 @@ export const projects = [
     links: [
       {
         content: 'Live Deploy',
-        url: 'https://geo-tone.netlify.app/',
+        url: 'https://geo-tone-v2.netlify.app/',
         src: 'netlify',
         icon: icons.netlify,
       },
       {
         content: 'Frontend Repo',
-        url: 'https://github.com/geo-tone/geo-tone-frontend',
-        src: 'github',
-        icon: icons.github,
-      },
-      {
-        content: 'Backend Repo',
-        url: 'https://github.com/geo-tone/geo-tone-backend',
+        url: 'https://github.com/kakizaki55/geo-tone-frontend',
         src: 'github',
         icon: icons.github,
       },
