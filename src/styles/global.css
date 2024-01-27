@@ -90,7 +90,10 @@ a {
 
 a:hover,
 a:focus,
-a:active {
+a:active,
+address:hover,
+address:focus,
+address:active {
   outline-color: inherit;
   outline-style: solid;
   outline-width: 2px;
