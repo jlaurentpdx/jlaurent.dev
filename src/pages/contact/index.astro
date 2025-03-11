@@ -4,15 +4,13 @@ import LinkNewTab from '../../components/astro/LinkNewTab.astro'
 import Email from '../../components/astro/Email.astro'
 import { contactLinks } from '../../data/contactLinks'
 
-const { linkedIn, github } = contactLinks
+const { github } = contactLinks
 ---
 
 <Layout includeHeading subtitle="Contact">
   <section id="contact">
     <article>
-      You can reach me on
-      <LinkNewTab {...linkedIn} />, check out my open-source projects and contributions on
-      <LinkNewTab {...github} />, or email me any time at
+      You can find me on the web at <LinkNewTab {...github} /> or reach me by email me at
       <Email>jlaurent.pdx@gmail.com</Email>.
     </article>
   </section>
